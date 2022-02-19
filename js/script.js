@@ -13,12 +13,31 @@ const chargerMeilleurMovie = async() => {
             //Photo Meilleur Film
             let photoMeilleurMovie = data.results[0].image_url;
             // Resume Meilleur Film
+                //id Meilleur Film
+                let idMeilleurMovie = data.results[0].id;
+                console.log(idMeilleurMovie);
+                
+                const urlMeilleurMovie = await fetch (urlRacine + idMeilleurMovie);
 
-            document.getElementById('meilleur_film').innerHTML= `<div class="container">
+                if (urlMeilleurMovie.status === 200) {
+                    const url = await urlMeilleurMovie.json();
+                    let resumeMeilleurFilm = url.description;
+                    console.log(resumeMeilleurFilm);
+
+                    document.getElementById('meilleur_film').innerHTML= `<div class="container">
                                                                     <h1 class="title">${titreMeilleurMovie}</h1>
                                                                     <img src="${photoMeilleurMovie}" alt="${titreMeilleurMovie}">
+                                                                    <h5>${resumeMeilleurFilm}</h5>
                                                                 </div>
-                                                                `   
+                                                                ` 
+
+                    
+                }else{
+                    return false;
+                }
+
+                
+
         }else{
             return false;
         }
@@ -37,11 +56,12 @@ const chargerMovies = async() =>{
         if(response.status === 200){
             const data = await response.json();
 
-            let moviesResp = ``;
+            // let moviesResp = ``;
             data.results.forEach(moviesResp => {    
-                moviesResp += `<div class="movie">
-                                    <img src="${moviesResp.image_url}" alt="">
-                               </div>`;      
+
+                // moviesResp += `<div class="movie">
+                //                     <img src="${moviesResp.image_url}" alt="">
+                //                </div>`;      
             document.getElementById('carrousel').innerHTML = moviesResp
             console.log(moviesResp)
             });
