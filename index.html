@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>JustStreamIt </title>
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <img src="img/logo.png" alt="">
+            <nav>
+                <a href="#meilleur_film" class="activ">Accueil</a>
+                <a href="#categories">Catégories</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Meilleur Film -->
+        <div class="meilleur_film">
+            <div id="meilleur_film">
+                <!-- titre + image + description recupere par js -->
+            </div>
+            
+            <button role="button" class="movie"><i class="fa-solid fa-play"></i>  Play</button>
+        </div>
+
+        <!-- carrousel -->
+        <div id="categories">
+
+            <!-- Movie mieux noté -->
+            <div class="movies-categories container">
+                <div class="container-title-controllers">
+                    <h3>Films les mieux notés</h3>
+                    <div class="indicators"></div>
+                </div>
+                
+                <div class="container-ppal">
+                    <button role="button" class="angle-left" id="angle-left"><i class="fa-solid fa-angle-left"></i></button>
+
+                        <div class="container-carrousel">
+                            <div class="carrousel" id="carrousel">
+                                <div class="movie"></div>
+                               
+                                <!-- <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <div class="movie">
+                                    <img src="img/logo.png" alt="">
+                                </div> -->
+                            </div>
+                        </div>
+                    
+                    <button role="button" class="angle-right" id="angle-right"><i class="fa-solid fa-angle-right"></i></button>
+                    
+                </div>
+            </div>
+        
+            <!-- Categorie 1 -->
+            <div class="movies-categories container">
+                <div class="container-title-controllers">
+                    <h3>Catégorie 1</h3>
+                    <div class="indicators"></div>
+                </div>
+                
+                <div class="container-ppal">
+                    <button role="button" class="angle-left" id="angle-left"><i class="fa-solid fa-angle-left"></i></button>
+
+                        <div class="container-carrousel">
+                            <div class="carrousel" id="carrousel">
+            
+                            </div>
+                        </div>
+                    
+                    <button role="button" class="angle-right" id="angle-right"><i class="fa-solid fa-angle-right"></i></button>
+                    
+                </div> 
+            </div>
+
+            <!-- Categorie 2 -->
+            <div class="movies-categories container">
+                <div class="container-title-controllers">
+                    <h3>Catégorie 2</h3>
+                    <div class="indicators"></div>
+                </div>
+                
+                <div class="container-ppal">
+                    <button role="button" class="angle-left" id="angle-left"><i class="fa-solid fa-angle-left"></i></button>
+
+                        <div class="container-carrousel">
+                            <div class="carrousel" id="carrousel">
+            
+                            </div>
+                        </div>
+                    
+                    <button role="button" class="angle-right" id="angle-right"><i class="fa-solid fa-angle-right"></i></button>
+                    
+                </div>   
+            </div>
+
+            <!-- Categorie 3 --> 
+            <div class="movies-categories container">
+                <div class="container-title-controllers">
+                    <h3>Catégorie 3</h3>
+                    <div class="indicators"></div>
+                </div>
+                
+                <div class="container-ppal">
+                    <button role="button" class="angle-left" id="angle-left"><i class="fa-solid fa-angle-left"></i></button>
+
+                        <div class="container-carrousel">
+                            <div class="carrousel" id="carrousel">
+            
+                            </div>
+                        </div>
+                    
+                    <button role="button" class="angle-right" id="angle-right"><i class="fa-solid fa-angle-right"></i></button>
+                    
+                </div> 
+            </div>
+
+        </div>
+
+        <!-- Modal -->
+        <div class="modal-container" id="modal_container">
+            <div class="modal modal-close">
+               <p class="close">X</p>
+               <img src="img/logo.png" alt="">
+               <div class="modal-text">
+                   <h1>Le Titre du film</h1>
+                   <h4>Le genre complet du film</h4>
+                   <p>Sa date de sortie</p>
+                   <p>Son Rated</p>
+                   <p>Son score Imdb</p>
+                   <p>Son réalisateur</p>
+                   <p>La liste des acteurs</p>
+                   <p>Sa durée</p>
+                   <p>Le pays d’origine</p>
+                   <p>Le résultat au Box Office</p>
+                   <p>Le résumé du film</p>
+               </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <p>© 2022 Copyright: <a href="https://appryll.github.io/Portfolio-NataliaFabiano/"> <<|NF|>> </a> - Toute reproduction interdite sans l'autorisation de l'auteur -</p>
+        </div>
+    </footer>
+
+<script src="js/script.js"></script>
+<script src="js/carrousel.js"></script>
+<script src="js/modal.js"></script>
+
+<script src="https://kit.fontawesome.com/6363fb7f9f.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
