@@ -30,14 +30,9 @@ const chargerMeilleurMovie = async() => {
                                                                     <h5>${resumeMeilleurFilm}</h5>
                                                                 </div>
                                                                 ` 
-
-                    
                 }else{
                     return false;
                 }
-
-                
-
         }else{
             return false;
         }
@@ -56,15 +51,38 @@ const chargerMovies = async() =>{
         if(response.status === 200){
             const data = await response.json();
 
-            // let moviesResp = ``;
-            data.results.forEach(moviesResp => {    
+            // let mieuxNotees = data.results
+            // // console.log(mieuxNotees)
 
-                // moviesResp += `<div class="movie">
-                //                     <img src="${moviesResp.image_url}" alt="">
-                //                </div>`;      
-            document.getElementById('carrousel').innerHTML = moviesResp
-            console.log(moviesResp)
-            });
+            //  for (i of mieuxNotees){
+            //      console.log(i.image_url)
+            //  };
+            // let carrousel= document.getElementById('carrousel').innerHTML = `<div class="movie">
+            //                                                         <img src="${i.image_url}" alt="">
+            //                                                    </div>`;
+            //  console.log(carrousel)
+            
+            // let moviesResp = '';
+            // data.results.forEach(moviesResp => {    
+
+            //      moviesResp += `<div class="movie">
+            //                          <img src="${moviesResp.image_url}" alt="">
+            //                     </div>`;   
+            // document.getElementById('carrousel').innerHTML= moviesResp;
+            // console.log(moviesResp);
+            // });
+            let movieResp = document.getElementById('carrousel');
+
+            movieResp.innerHTML = '';
+
+            let mieuxNotees = data.results;
+            console.log(mieuxNotees);
+
+            for(let i of mieuxNotees){
+                movieResp.innerHTML += `<div class="movie">
+                                <img src="${i.image_url}" alt="${i.title}">
+                              </div>`;
+            }
             
         }else {
             return false;
@@ -120,3 +138,5 @@ chargerMeilleurMovie();
 // for (let i of data){
  //   console.log(i.next)
 //};
+
+
