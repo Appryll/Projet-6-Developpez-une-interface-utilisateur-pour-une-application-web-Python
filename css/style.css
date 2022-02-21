@@ -1,5 +1,5 @@
 :root{
-    ---rojo: #E50914;
+    --rojo: #fc1d28;
     --fondo: #141414;
 }
 
@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: "Helvetica";
     src: url("../font/Helvetica.ttf");
@@ -16,6 +20,7 @@
 
 body { 
     background-color: var(--fondo);
+    
 }
 
 footer{
@@ -49,10 +54,12 @@ header .container{
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
+    height: 80px;
 }
 
-header img {
-    width: 8%;
+header h1{
+    color:var(--rojo);
+    font-family: cursive;
 }
 
 nav{
@@ -101,7 +108,8 @@ header nav a.activ {
 
 #meilleur_film img{
     width:25%;
-    border: 3mm ridge rgba(216, 169, 236, 0.6);
+    /* border: 3mm ridge rgba(216, 169, 236, 0.6); */
+    border-style: groove;
    
 }
 
@@ -196,7 +204,7 @@ margin: auto;
 }
 
 .movies-categories .container-carrousel .carrousel .movie{
-    min-width: 14.285%;
+    min-width: 25%;
     transition: .3s ease all;
     box-shadow: 5px 5px 10px rgba(0,0,0,.3);
 }
@@ -207,7 +215,7 @@ margin: auto;
 }
 
 .movies-categories .container-carrousel .carrousel .movie img {
-    width: 100%;
+    width: 80%;
     vertical-align: top;
     padding: 0 1px
 } 

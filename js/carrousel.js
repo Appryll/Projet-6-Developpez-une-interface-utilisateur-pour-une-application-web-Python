@@ -30,7 +30,7 @@ flecheGauche.addEventListener('click', () => {
 
 //--------------------- Pagination -----------------------//
 
-const nomberPage = Math.ceil(movie.length / 7); //nomber entier
+const nomberPage = Math.ceil(movie.length / 7); // entier
 for(let i = 0; i < nomberPage; i++){
     const indicateur = document.createElement('button');
 
@@ -40,7 +40,7 @@ for(let i = 0; i < nomberPage; i++){
 
     document.querySelector('.indicators').appendChild(indicateur);
     indicateur.addEventListener('click', (e) =>{
-        ligne.scrollLeft = i * ligne.offsetWidth; // * el ancho de la fila
+        ligne.scrollLeft = i * ligne.offsetWidth; // * largeur de ligne
 
         document.querySelector('.indicators .activo').classList.remove('activo');
         e.target.classList.add('activo');
