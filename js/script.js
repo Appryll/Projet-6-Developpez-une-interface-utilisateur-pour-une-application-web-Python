@@ -20,13 +20,17 @@ const chargerMeilleurMovie = async() => {
                 if (urlMeilleurMovie.status === 200) {
                     const url = await urlMeilleurMovie.json();
                     let resumeMeilleurFilm = url.description;
+
+                    document.querySelector('.meilleur_film_photo').innerHTML= `<img src="${photoMeilleurMovie}" alt="${titreMeilleurMovie}">` 
+                    document.querySelector('.meilleur_film_description').innerHTML= `<h1 class="title">${titreMeilleurMovie}</h1>/n
+
+                                                                                        <h5>${resumeMeilleurFilm}</h5>
+                                                                                        <div class="titles">
+                                                                                        <h6>Duration:</h6> <p>${url.duration} minutes</p>
+                                                                                        </div>
+                                                                                        ` 
                 
-                    document.getElementById('meilleur_film').innerHTML= `<div class="container">
-                                                                    <h1 class="title">${titreMeilleurMovie}</h1>
-                                                                    <img src="${photoMeilleurMovie}" alt="${titreMeilleurMovie}">
-                                                                    <h5>${resumeMeilleurFilm}</h5>
-                                                                </div>
-                                                                ` 
+                                                         
                 }else{
                     return false;
                 }

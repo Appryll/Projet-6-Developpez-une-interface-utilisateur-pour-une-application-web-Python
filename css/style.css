@@ -81,45 +81,61 @@ header nav a.activ {
     font-size: 18px;
 }
 
+.meilleur_film_photo{
+    border: solid;
+    border-color: thistle
+}
+
+.meilleur_film_photo img{
+    width:25%;
+    /* border: 3mm ridge rgba(216, 169, 236, 0.6); */
+    border-style: groove; 
+    margin: 20px
+}
+
 .meilleur_film button{
     position: absolute;
     top: 70%;
     left: 30%;
-    background-color: greenyellow;
+    background-color: #b9a4b9;
     width: 6%;
     height: 30px;
     font-size: 15px;
     border: solid;
-    border-color: yellow;
+    border-color: #b9a4b9;
     border-radius: 5ps;
     border-radius: 10px;
     color: brown;
 }
 
-#meilleur_film{
+.meilleur_film{
     position: relative;
 }
-#meilleur_film h1{
-    color: #FFF;
+
+.meilleur_film_description{
     position: absolute;
-    left: 29%;
-    top: 10%;
+    top: 8%;
+    left: 30%;
 }
 
-#meilleur_film img{
-    width:25%;
-    /* border: 3mm ridge rgba(216, 169, 236, 0.6); */
-    border-style: groove;
-   
+.meilleur_film_description h1{
+    margin-bottom: 2%;
 }
 
-#meilleur_film h5{
+.meilleur_film_description h1, h5, p{
     color: #FFF;
     font-family: Helvetica;
-    position: absolute;
-    top: 20%;
-    left: 50%;
+}
 
+.meilleur_film_description h6{
+    color: gray;
+    margin-right: 6px;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+.titles{
+    display: flex;
 }
 
 /******************************** contenedor de titulos y controles ********************************/
