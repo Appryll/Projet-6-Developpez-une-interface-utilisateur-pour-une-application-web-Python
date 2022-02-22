@@ -90,12 +90,13 @@ const chargerMovies = async() =>{
             let mieuxNotees_pag_1 = data.results;
             let mieuxNotees_pag_2 = data_pag_1.results;
             let mieuxNoteesAll = mieuxNotees_pag_1.concat(mieuxNotees_pag_2[0]).concat(mieuxNotees_pag_2[1]);
+
             let movieResp = document.getElementById('carrousel_films_mieux_notees');
             
             movieResp.innerHTML = '';
             for(let i of mieuxNoteesAll){
-                
-                movieResp.innerHTML += `<div class="movie">
+                        
+                movieResp.innerHTML += `<div class="movie" id="movie_${i.id}">
                                 <img src="${i.image_url}" alt="${i.title}">
                               </div>`;
             }
