@@ -88,7 +88,6 @@ header nav a.activ {
 
 .meilleur_film_photo img{
     width:25%;
-    /* border: 3mm ridge rgba(216, 169, 236, 0.6); */
     border-style: groove; 
     margin: 20px
 }
@@ -120,15 +119,23 @@ header nav a.activ {
 
 .meilleur_film_description h1{
     margin-bottom: 2%;
-}
-
-.meilleur_film_description h1, h5, p{
     color: #FFF;
     font-family: Helvetica;
+    font-size: 26x;
+}
+
+.resume-meilleur-film{
+    font-size: 20px;
+}
+
+.meilleur_film_description p{
+    color: #FFF;
+    font-family: Helvetica;
+    margin-bottom: 0.5%;
 }
 
 .meilleur_film_description h6{
-    color: gray;
+    color: #a0a0a0;
     margin-right: 6px;
     text-decoration: underline;
     font-size: 16px;
@@ -177,7 +184,7 @@ margin: auto;
     position: relative;
 }
 
-.movies-categories .container-ppal .angle-right,
+.movies-categories .container-ppal .angle-right, 
 .movies-categories .container-ppal .angle-left{
     position: absolute;
     border: none;
@@ -199,12 +206,13 @@ margin: auto;
 }
 
 .movies-categories .container-ppal .angle-left{
-    left:0;
+    left:-50px;
 }
 
 .movies-categories .container-ppal .angle-right{
     right:0;
 }
+
 
 /****************************** carrousel ****************************/
 .movies-categories .container-carrousel{
@@ -225,8 +233,8 @@ margin: auto;
     box-shadow: 5px 5px 10px rgba(0,0,0,.3);
 }
 
-.movies-categories .container-carrousel .carrousel .movie.hover{
-    transform: scale(1.2);
+.movies-categories .container-carrousel .carrousel .movie:hover{
+    transform: scale(1.1);
     transform-origin: center;
 }
 
@@ -235,6 +243,7 @@ margin: auto;
     vertical-align: top;
     padding: 0 1px
 } 
+
 
 /*********************************** Modal ***********************************/
 .modal-container{

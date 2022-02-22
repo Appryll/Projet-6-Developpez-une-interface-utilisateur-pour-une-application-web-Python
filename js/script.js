@@ -19,15 +19,49 @@ const chargerMeilleurMovie = async() => {
 
                 if (urlMeilleurMovie.status === 200) {
                     const url = await urlMeilleurMovie.json();
-                    let resumeMeilleurFilm = url.description;
+                    let resumeMeilleurFilm = url.long_description;
 
                     document.querySelector('.meilleur_film_photo').innerHTML= `<img src="${photoMeilleurMovie}" alt="${titreMeilleurMovie}">` 
-                    document.querySelector('.meilleur_film_description').innerHTML= `<h1 class="title">${titreMeilleurMovie}</h1>/n
+                    document.querySelector('.meilleur_film_description').innerHTML= `<h1 class="title">${titreMeilleurMovie}</h1>
 
-                                                                                        <h5>${resumeMeilleurFilm}</h5>
+                                                                                        <p class="resume-meilleur-film">${resumeMeilleurFilm}</p>
+
+                                                                                        <div class="titles">
+                                                                                        <h6>Genre:</h6> <p>${url.genres}</p>
+                                                                                        </div>
+                                                                
+                                                                                        <div class="titles">
+                                                                                        <h6>Actors:</h6> <p>${url.actors}</p>
+                                                                                        </div>
+
+                                                                                        <div class="titles">
+                                                                                        <h6>Scénariste:</h6> <p>${url.directors}</p>
+                                                                                        </div>
+
+                                                                                        <div class="titles">
+                                                                                        <h6>Compositeur:</h6> <p>${url.writers}</p>
+                                                                                        </div>
+
+                                                                                        <div class="titles">
+                                                                                        <h6>Langue:</h6><p>${url.languages} </p>
+                                                                                        </div>
+
+                                                                                        <div class="titles">
+                                                                                        <h6>Année:</h6><p>${url.year} </p>
+                                                                                        </div>
+
+                                                                                        <div class="titles">
+                                                                                        <h6>Lieu:</h6><p>${url.countries}</p>
+                                                                                        </div>
+
                                                                                         <div class="titles">
                                                                                         <h6>Duration:</h6> <p>${url.duration} minutes</p>
                                                                                         </div>
+
+                                                                                        <div class="titles">
+                                                                                        <h6>Score Imdb:</h6> <p>${url.imdb_score} /</p><p>${url.votes} votes</p>
+                                                                                        </div>
+
                                                                                         ` 
                 
                                                          
@@ -54,11 +88,8 @@ const chargerMovies = async() =>{
             const data_pag_1 = await response_pag_1.json();
 
             let mieuxNotees_pag_1 = data.results;
-
             let mieuxNotees_pag_2 = data_pag_1.results;
-
             let mieuxNoteesAll = mieuxNotees_pag_1.concat(mieuxNotees_pag_2[0]).concat(mieuxNotees_pag_2[1]);
-
             let movieResp = document.getElementById('carrousel_films_mieux_notees');
             
             movieResp.innerHTML = '';
@@ -92,12 +123,9 @@ const chargerFilmCategorie = async() => {
                 const data = await response.json();
                 const data_pag_1 = await response_pag_1.json();
                 
-                let mieuxNotees_pag_1 = data.results;
-                
-                let mieuxNotees_pag_2 = data_pag_1.results;
-                
-                let mieuxNoteesAll = mieuxNotees_pag_1.concat(mieuxNotees_pag_2[0]).concat(mieuxNotees_pag_2[1]);
-                
+                let mieuxNotees_pag_1 = data.results; 
+                let mieuxNotees_pag_2 = data_pag_1.results;                
+                let mieuxNoteesAll = mieuxNotees_pag_1.concat(mieuxNotees_pag_2[0]).concat(mieuxNotees_pag_2[1]);                
                 let movieResp = document.getElementById('carrousel_' + i);
                 
                 movieResp.innerHTML = '';
@@ -118,6 +146,10 @@ const chargerFilmCategorie = async() => {
 
 };
 
-chargerMovies();
-chargerMeilleurMovie();
-chargerFilmCategorie();
+window.addEventListener('load', function () {
+    chargerMovies();
+    chargerMeilleurMovie();
+    chargerFilmCategorie();
+});
+
+

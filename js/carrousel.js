@@ -1,63 +1,25 @@
-const ligne = document.querySelector('.container-carrousel');
-const movie = document.querySelectorAll('.movie');
+window.addEventListener('load', function () {
+    categoriesChoice = ["films_mieux_notees", "adventure", "action", "comedy"];
 
-const flecheGauche = document.getElementById('angle-left');
-const flecheDroite = document.getElementById('angle-right');
+for (let i of categoriesChoice) {
+    console.log(i);
+    const ligne = document.getElementById('container-carrousel_' + i);
+
+const flecheGauche = document.getElementById('angle-left_' + i);
+const flecheDroite = document.getElementById('angle-right_' + i);
+
 
 //--------------------- Event Listener fleche Droite-------------------//
 
 flecheDroite.addEventListener('click', () => {
     ligne.scrollLeft += ligne.offsetWidth;
-
-    const indicateurActive = document.querySelector('.indicators .activo');
-    if (indicateurActive.nextSibling){
-        indicateurActive.nextSibling.classList.add('activo');
-        indicateurActive.classList.remove('activo');
-    }
 });
 
 //--------------------- Event Listener fleche Gauche-------------------//
 
 flecheGauche.addEventListener('click', () => {
-    ligne.scrollLeft -= ligne.offsetWidth;
-
-    const indicateurActive = document.querySelector('.indicators .activo');
-    if (indicateurActive.previousSibling){
-        indicateurActive.previousSibling.classList.add('activo');
-        indicateurActive.classList.remove('activo');
-    }
+   ligne.scrollLeft -= ligne.offsetWidth;
 });
 
-//--------------------- Pagination -----------------------//
-
-const nomberPage = Math.ceil(movie.length / 7); // entier
-for(let i = 0; i < nomberPage; i++){
-    const indicateur = document.createElement('button');
-
-    if(i === 0){
-        indicateur.classList.add('activo');
-    }
-
-    document.querySelector('.indicators').appendChild(indicateur);
-    indicateur.addEventListener('click', (e) =>{
-        ligne.scrollLeft = i * ligne.offsetWidth; // * largeur de ligne
-
-        document.querySelector('.indicators .activo').classList.remove('activo');
-        e.target.classList.add('activo');
-    });
 }
-
-//--------------------------- hover ---------------//
-movie.forEach((film) => {
-    film.addEventListener('mouseenter', (e) => {
-        const element = e.currentTarget;
-        setTimeout(() =>{
-            movie.forEach(film => film.classList.remove('hover'));
-            element.classList.add('hover');
-        }, 300);
-    });
-});
-
-ligne.addEventListener('mouseleave', () => {
-    movie.forEach(film => film.classList.remove('hover'));
 });
