@@ -1,8 +1,7 @@
-window.addEventListener('load', function () {
-    categoriesChoice = ["films_mieux_notees", "adventure", "action", "comedy"];
+categoriesChoice = ["films_mieux_notees", "adventure", "action", "comedy"];
 
 for (let i of categoriesChoice) {
-    console.log(i);
+    //console.log(i);
     const ligne = document.getElementById('container-carrousel_' + i);
 
 const flecheGauche = document.getElementById('angle-left_' + i);
@@ -22,4 +21,3 @@ flecheGauche.addEventListener('click', () => {
 });
 
 }
-});

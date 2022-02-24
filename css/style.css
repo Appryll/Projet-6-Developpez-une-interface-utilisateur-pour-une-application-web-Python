@@ -141,7 +141,7 @@ header nav a.activ {
     font-size: 16px;
 }
 
-.titles{
+.titles, .title-modal{
     display: flex;
 }
 
@@ -262,20 +262,35 @@ margin: auto;
 }
 
 .modal{
-    width: 40%;
-    height: 50%;
-    background: #fff;
-    /* text-align: center; */
+    width: 65%;
+    height: 450px;
+    background: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    color: #141414;
     display: flex;
-    /* flex-direction: column; */
     justify-content:space-evenly;
     position: relative;
     transition: transform 0.8s;
     transform: translateY(0%);
+    border-radius: 5px;
 }
 
-.modal > img{
-    height:50%;
+#modal-photo > img {
+    height:100%;
+    padding: 7%;
+}
+
+#modal-text {
+    margin: auto;
+}
+
+.title-modal h6{
+text-decoration: underline;
+margin-right: 0.7%;
+font-size: 16px;
+}
+
+.title-modal p{
+    font-size: 16px;
 }
 
 .modal-close{
@@ -289,7 +304,7 @@ margin: auto;
     display: inline-block;
     width:25px;
     height: 25px;
-    background: var(---rojo);
+    background: var(--rojo);
     color: #fff;
     line-height: 25px;
     cursor: pointer;
