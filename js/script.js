@@ -29,43 +29,34 @@ const chargerMeilleurMovie = async() => {
 
                     meilleurFilmPhoto.innerHTML= `<img src="${photoMeilleurMovie}" alt="${titreMeilleurMovie}">` 
                     meilleurFilmDescription.innerHTML= `<h1 class="title">${titreMeilleurMovie}</h1>
-                                                        <p class="resume-meilleur-film">${url.long_description}</p>
-                                                        <div class="titles">
-                                                        <h6>Genre:</h6> <p>${url.genres}</p>
-                                                        </div>
-                                
-                                                        <div class="titles">
-                                                        <h6>Actors:</h6> <p>${url.actors}</p>
-                                                        </div>
-                                                        <div class="titles">
-                                                        <h6>Scénariste:</h6> <p>${url.directors}</p>
-                                                        </div>
-                                                        <div class="titles">
-                                                        <h6>Compositeur:</h6> <p>${url.writers}</p>
-                                                        </div>
-                                                        <div class="titles">
-                                                        <h6>Langue:</h6><p>${url.languages} </p>
-                                                        </div>
-                                                        <div class="titles">
-                                                        <h6>Année:</h6><p>${url.year} </p>
-                                                        </div>
-                                                        <div class="titles">
-                                                        <h6>Lieu:</h6><p>${url.countries}</p>
-                                                        </div>
-                                                        <div class="titles">
-                                                        <h6>Duration:</h6> <p>${url.duration} minutes</p>
-                                                        </div>
-                                                        <div class="titles">
-                                                        <h6>Score Imdb:</h6> <p>${url.imdb_score} /</p><p>${url.votes} votes</p>
-                                                        </div>`                                                                     
+                                                        <p class="resume-meilleur-film">${url.description}</p>
+
+                                                        <button role="button" id="${url.id}">+ Plus d'info</button>` 
+                // id Movie
+                let idMeilleurMovie = url.id;
+                //console.log(idMeilleurMovie);
+ 
+                // Get id Movie
+                const ouvrir = document.getElementById(idMeilleurMovie);
+                console.log(ouvrir);
+
+                // if event click->fxouvrir modal
+                
+                ouvrir.addEventListener('click', function(){
+                    console.log("ourvir");
+                    
+                    ouvrirModal(idMeilleurMovie);  //recuperation des donnes selon id + gerer modal + ouvrir modal
+                })
+
                 }else{
                     return false;
                 }
+        
         }else{
             return false;
         }
-    }
-    catch(err){
+
+    } catch(err){
         console.log(err);
     }
 };
@@ -90,17 +81,26 @@ const chargerMovies = async() =>{
             for(let i of mieuxNoteesAll){
                         
                 movieResp.innerHTML += `<div class="movie" >
-                                <img id="${i.id}"src="${i.image_url}" alt="${i.title}">
+                                <img id="${i.id}" src="${i.image_url}" alt="${i.title}">
                               </div>`;
 
-            // FX modalDonnés
-            // FX ouvrirModal 
-            
-            // var id 
+            // id Movie
             let idMovieMieuxNotees = i.id;
-            // console.log(idMovie);
-            ouvrirModal(idMovieMieuxNotees); 
+            //console.log(idMeilleurMovie);
+
+            // Get id Movie
+            const ouvrir = document.getElementById(idMovieMieuxNotees);
+            //console.log(ouvrir);
+
+            // if event click->fxouvrir modal
+            
+            ouvrir.addEventListener('click', function(){
+                console.log("ourvir");
+                
+                ouvrirModal(idMovieMieuxNotees);  //recuperation des donnes selon id + gerer modal + ouvrir modal
+            })
             }
+
         }else {
             return false;
         };
@@ -134,16 +134,24 @@ const chargerFilmCategorie = async() => {
                 for(let j of mieuxNoteesAll){
 
                     movieResp.innerHTML += `<div class="movie" >
-                                                <img id="${j.id}"src="${j.image_url}" alt="${j.title}">
+                                                <img id="${j.id}" src="${j.image_url}" alt="${j.title}">
                                             </div>`;
-                    // FX modalDonnés
-                    // FX ouvrirModal 
-                    
-                    // var id 
+                    // id Movie
                     let idMovieCategories = j.id;
-                    // console.log(idMovie);
-                    ouvrirModal(idMovieCategories);     
-                };
+                    //console.log(idMeilleurMovie);
+
+                    // Get id Movie
+                    const ouvrir = document.getElementById(idMovieCategories);
+                    //console.log(ouvrir);
+
+                    // if event click->fxouvrir modal
+                    
+                    ouvrir.addEventListener('click', function(){
+                        console.log("ourvir");
+                        
+                        ouvrirModal(idMovieCategories);  //recuperation des donnes selon id + gerer modal + ouvrir modal
+                    })
+                    }
             }else {
              return false;
             };

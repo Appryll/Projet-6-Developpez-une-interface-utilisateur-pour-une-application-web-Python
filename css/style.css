@@ -66,20 +66,54 @@ nav{
     margin-left: 53%;
 }
 
-header nav a{
-    color:  #c2c0c0;
+.dropbtn {
     text-decoration: none;
+    color: #c2c0c0;
     margin: 20px;
-    font-family: Helvetica;
     font-size: 18px;
+    font-family: Helvetica;
+    cursor: pointer;
+  }
+  
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #c2c0c0;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background: #62757F;
+}
+  
+.dropdown-content a {
+    color: #c2c0c0;
+    font-family: Helvetica;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; 
 }
 
-header nav a:hover,
-header nav a.activ {
-    color: #FFF;
-    font-family: Helvetica;
-    font-size: 18px;
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: black;
 }
+
+nav > a:hover, .dropdown > a:hover {
+    color: #f1f1f1;  
+    text-decoration: underline;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/******************************** Meilleur Film **********************************************/
 
 .meilleur_film_photo{
     border: solid;
@@ -92,19 +126,21 @@ header nav a.activ {
     margin: 20px
 }
 
-.meilleur_film button{
+.meilleur_film_description > button{
     position: absolute;
-    top: 70%;
-    left: 30%;
+    top: 160%;
     background-color: #b9a4b9;
-    width: 6%;
-    height: 30px;
-    font-size: 15px;
+    width: 12%;
+    height: 40px;
+    font-size: 17px;
     border: solid;
     border-color: #b9a4b9;
-    border-radius: 5ps;
-    border-radius: 10px;
+    border-radius: 5px;
     color: brown;
+    cursor: pointer;
+}
+.meilleur_film_description > button:hover{
+   background-color: #c8aec8;
 }
 
 .meilleur_film{
@@ -113,7 +149,7 @@ header nav a.activ {
 
 .meilleur_film_description{
     position: absolute;
-    top: 8%;
+    top: 15%;
     left: 30%;
 }
 
@@ -121,28 +157,13 @@ header nav a.activ {
     margin-bottom: 2%;
     color: #FFF;
     font-family: Helvetica;
-    font-size: 26x;
+    font-size: 55px;
 }
 
 .resume-meilleur-film{
-    font-size: 20px;
-}
-
-.meilleur_film_description p{
+    font-size: 21px;
     color: #FFF;
     font-family: Helvetica;
-    margin-bottom: 0.5%;
-}
-
-.meilleur_film_description h6{
-    color: #a0a0a0;
-    margin-right: 6px;
-    text-decoration: underline;
-    font-size: 16px;
-}
-
-.titles, .title-modal{
-    display: flex;
 }
 
 /******************************** contenedor de titulos y controles ********************************/
@@ -246,6 +267,11 @@ margin: auto;
 
 
 /*********************************** Modal ***********************************/
+
+.title-modal{
+    display: flex;
+}
+
 .modal-container{
     opacity: 0;
     visibility: hidden;
@@ -283,6 +309,10 @@ margin: auto;
     margin: auto;
 }
 
+#modal-text > h1{
+    margin-bottom: 2%;
+}
+
 .title-modal h6{
 text-decoration: underline;
 margin-right: 0.7%;
@@ -310,4 +340,8 @@ font-size: 16px;
     cursor: pointer;
     border-radius: 50%;
     padding:0 7px;
+}
+
+.close:hover{
+    background-color: #aa1616;
 }

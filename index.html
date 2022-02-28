@@ -18,15 +18,23 @@
         <div class="container">
             <h1>JustStreamIt</h1>
             <nav>
-                <a href="#meilleur_film" class="activ">Accueil</a>
-                <a href="#categories">Catégories</a>
+                <a href="#meilleur_film" class="dropbtn activ">Accueil</a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Catégories</a>
+                    <div class="dropdown-content">
+                    <a href="#mieux_notees">Les films mieuxs notées</a>
+                    <a href="#comedy">Comedie</a>
+                    <a href="#adventure">Adventure</a>
+                    <a href="#action">Action</a>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
 
     <main>
         <!-- Meilleur Film -->
-        <div class="meilleur_film container">
+        <div id="meilleur_film"class="meilleur_film container">
             <div class="meilleur_film_photo">
                 <!--  image recuperé par js -->
             </div>
@@ -34,14 +42,15 @@
             <div class="meilleur_film_description">
                 <!-- titre + description recuperé par js -->
             </div> 
-            <button role="button" class="movie"><i class="fa-solid fa-play"></i>  Play</button>    
+            
+               
         </div>
 
         <!-- carrousel -->
-        <div id="categories">
+        <div>
 
             <!-- Movie mieux noté -->
-            <div class="movies-categories container">
+            <div id="mieux_notees" class="movies-categories container">
                 <div class="container-title-controllers">
                     <h3>Films les mieux notés</h3>
                     <div class="indicators"></div>
@@ -62,7 +71,7 @@
             </div>
         
             <!-- Categorie COMEDY -->
-            <div class="movies-categories container">
+            <div id="comedy" class="movies-categories container">
                 <div class="container-title-controllers">
                     <h3>Comédies les mieux notées</h3>
                     <div class="indicatorscomedy"></div>
@@ -83,7 +92,7 @@
             </div>
 
             <!-- Categorie ADVENTURE -->
-            <div class="movies-categories container">
+            <div id="adventure" class="movies-categories container">
                 <div class="container-title-controllers">
                     <h3>Les films d'aventure les mieux notées</h3>
                     <div class="indicatorsadventure"></div>
@@ -104,7 +113,7 @@
             </div>
 
             <!-- Categorie ACTION --> 
-            <div class="movies-categories container">
+            <div id="action" class="movies-categories container">
                 <div class="container-title-controllers">
                     <h3>Les films d'action les mieux notées</h3>
                     <div class="indicatorsaction"></div>
@@ -147,11 +156,10 @@
         </div>
     </footer>
 
-<script type="module" src="js/script.js"></script>
-<script src="js/carrousel.js"></script>
-<script type="module" src="js/modal.js"></script>
-
 <script src="https://kit.fontawesome.com/6363fb7f9f.js" crossorigin="anonymous"></script>
+<script src="js/carrousel.js"></script>
 
+<script type="module" src="js/modal.js"></script>
+<script type="module" src="js/script.js"></script>
 </body>
 </html>
