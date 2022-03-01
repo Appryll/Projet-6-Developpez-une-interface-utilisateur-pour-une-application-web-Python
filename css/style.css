@@ -20,7 +20,6 @@ html{
 
 body { 
     background-color: var(--fondo);
-    
 }
 
 footer{
@@ -52,7 +51,6 @@ header {
 
 header .container{
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
     height: 80px;
 }
@@ -139,6 +137,7 @@ nav > a:hover, .dropdown > a:hover {
     color: brown;
     cursor: pointer;
 }
+
 .meilleur_film_description > button:hover{
    background-color: #c8aec8;
 }
@@ -166,7 +165,7 @@ nav > a:hover, .dropdown > a:hover {
     font-family: Helvetica;
 }
 
-/******************************** contenedor de titulos y controles ********************************/
+/******************************** Container des titres et controllers ********************************/
 .container-title-controllers{
     display:flex;
     justify-content:space-between;
@@ -194,7 +193,7 @@ margin: auto;
     background:royalblue;
 }
 
-/******************************** contenedor ppal y flechas ********************************/
+/******************************** Container ppal et flèches ********************************/
 .movies-categories{
     margin-top: 3%;
 }
@@ -235,7 +234,7 @@ margin: auto;
 }
 
 
-/****************************** carrousel ****************************/
+/****************************** Carrousel ****************************/
 .movies-categories .container-carrousel{
     width: 100%;
     padding: 20px 0;

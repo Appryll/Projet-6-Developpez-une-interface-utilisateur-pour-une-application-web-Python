@@ -1,6 +1,5 @@
  import { urlRacine } from './script.js';
 
- 
 // ouvrir modal
 export async function ouvrirModal (idMovie) {
     //recuperation de donnes selon ID
