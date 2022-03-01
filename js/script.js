@@ -32,21 +32,33 @@ const chargerMeilleurMovie = async() => {
                                                         <p class="resume-meilleur-film">${url.description}</p>
 
                                                         <button role="button" id="${url.id}">+ Plus d'info</button>` 
-                // id Movie
-                let idMeilleurMovie = url.id;
-                //console.log(idMeilleurMovie);
- 
-                // Get id Movie
-                const ouvrir = document.getElementById(idMeilleurMovie);
-                console.log(ouvrir);
 
-                // if event click->fxouvrir modal
+                const button = document.getElementsByTagName('button')[0];
+
+                button.addEventListener('click', () => {
+                    const id = button.getAttribute('id');
+                    console.log (id);
                 
-                ouvrir.addEventListener('click', function(){
-                    console.log("ourvir");
+                    console.log(button);
+
+                    ouvrirModal(id);
+                });
+
+                // // id Movie
+                // let idMeilleurMovie = url.id;
+                // //console.log(idMeilleurMovie);
+ 
+                // // Get id Movie
+                // const ouvrir = document.getElementById(idMeilleurMovie);
+                // //console.log(ouvrir);
+
+                // // if event click->fxouvrir modal
+                
+                // ouvrir.addEventListener('click', () => {
+                //     console.log("ourvir");
                     
-                    ouvrirModal(idMeilleurMovie);  //recuperation des donnes selon id + gerer modal + ouvrir modal
-                })
+                //     ouvrirModal(idMeilleurMovie);  //recuperation des donnes selon id + gerer modal + ouvrir modal
+                // })
 
                 }else{
                     return false;
@@ -84,21 +96,35 @@ const chargerMovies = async() =>{
                                 <img id="${i.id}" src="${i.image_url}" alt="${i.title}">
                               </div>`;
 
-            // id Movie
-            let idMovieMieuxNotees = i.id;
-            //console.log(idMeilleurMovie);
-
-            // Get id Movie
-            const ouvrir = document.getElementById(idMovieMieuxNotees);
-            //console.log(ouvrir);
-
-            // if event click->fxouvrir modal
-            
-            ouvrir.addEventListener('click', function(){
-                console.log("ourvir");
                 
-                ouvrirModal(idMovieMieuxNotees);  //recuperation des donnes selon id + gerer modal + ouvrir modal
-            })
+
+            // // id Movie
+            // let idMovieMieuxNotees = i.id;
+            // //console.log(idMovieMieuxNotees);
+
+            // // Get id Movie
+            // const ouvrir = document.getElementById(idMovieMieuxNotees);
+            // //console.log(ouvrir);
+
+            // // if event click->fxouvrir modal
+            
+            // ouvrir.addEventListener('click', () => {
+            //     console.log("ourvir");
+                
+            //     ouvrirModal(idMovieMieuxNotees);  //recuperation des donnes selon id + gerer modal + ouvrir modal
+            // })
+            }
+            const img = document.getElementsByTagName('img');
+            console.log (img);
+
+            for (let i of img) {
+                i.addEventListener('click', () => {
+                    console.log("coucou");
+                    const id = i.getAttribute('id');
+                    console.log (id);
+                
+                    ouvrirModal(id);
+                })
             }
 
         }else {
@@ -136,21 +162,36 @@ const chargerFilmCategorie = async() => {
                     movieResp.innerHTML += `<div class="movie" >
                                                 <img id="${j.id}" src="${j.image_url}" alt="${j.title}">
                                             </div>`;
-                    // id Movie
-                    let idMovieCategories = j.id;
-                    //console.log(idMeilleurMovie);
 
-                    // Get id Movie
-                    const ouvrir = document.getElementById(idMovieCategories);
-                    //console.log(ouvrir);
-
-                    // if event click->fxouvrir modal
-                    
-                    ouvrir.addEventListener('click', function(){
-                        console.log("ourvir");
+                    const img = document.getElementsByTagName('img');
+                    console.log (img);
+        
+                    for (let i of img) {
+                        i.addEventListener('click', () => {
+                            console.log("coucou");
+                            const id = i.getAttribute('id');
+                            console.log (id);
                         
-                        ouvrirModal(idMovieCategories);  //recuperation des donnes selon id + gerer modal + ouvrir modal
-                    })
+                            ouvrirModal(id);
+                        })
+                    }
+
+
+                    // // id Movie
+                    // let idMovieCategories = j.id;
+                    // //console.log(idMeilleurMovie);
+
+                    // // Get id Movie
+                    // const ouvrir = document.getElementById(idMovieCategories);
+                    // //console.log(ouvrir);
+
+                    // // if event click->fxouvrir modal
+                    
+                    // ouvrir.addEventListener('click', () =>{
+                    //     console.log("ourvir");
+                        
+                    //     ouvrirModal(idMovieCategories);  //recuperation des donnes selon id + gerer modal + ouvrir modal
+                    // })
                     }
             }else {
              return false;
