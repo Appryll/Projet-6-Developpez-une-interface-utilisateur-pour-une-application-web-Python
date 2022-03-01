@@ -50,20 +50,18 @@ header {
 }
 
 header .container{
-    display: flex;
-    align-items: center;
+    position: absolute;
     height: 80px;
-}
-
-header h1{
-    color:var(--rojo);
-    font-family: cursive;
 }
 
 nav{
     margin-left: 53%;
+    position: relative;
+    height: 80px;
+    top: 30px;
 }
 
+/***** Dropdown *****/
 .dropbtn {
     text-decoration: none;
     color: #c2c0c0;
@@ -109,10 +107,64 @@ nav > a:hover, .dropdown > a:hover {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+ 
+/***** Flip Card *****/
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    width: 520px;
+    height:80px;
+    position: relative;
+    left: 20px;
+}
 
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #62757F;
+}
+
+
+.flip-card-front h1{
+    color:var(--rojo);
+    font-family: cursive; 
+    margin-top: 2%;
+    font-size: 40px;
+}
+
+.flip-card-back {
+    background-color: #4a758b;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back h3{
+    font-family: Garamond, serif;
+    color: #f8d4d4;  
+    margin-top: 3%;
+}
 
 /******************************** Meilleur Film **********************************************/
-
 .meilleur_film_photo{
     border: solid;
     border-color: thistle
@@ -173,10 +225,10 @@ nav > a:hover, .dropdown > a:hover {
 }
 
 .container-title-controllers h3{
-color: #fff;
-font-size: 27px;
-font-family: Helvetica;
-margin: auto;
+    color: #fff;
+    font-size: 27px;
+    font-family: Helvetica;
+    margin: auto;
 }
 
 .container-title-controllers .indicators button{
@@ -266,7 +318,6 @@ margin: auto;
 
 
 /*********************************** Modal ***********************************/
-
 .title-modal{
     display: flex;
 }
@@ -313,9 +364,9 @@ margin: auto;
 }
 
 .title-modal h6{
-text-decoration: underline;
-margin-right: 0.7%;
-font-size: 16px;
+    text-decoration: underline;
+    margin-right: 0.7%;
+    font-size: 16px;
 }
 
 .title-modal p{
